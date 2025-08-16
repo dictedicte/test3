@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            transition-property: all;
+            transition-duration: 0.15s;
+            padding: 0;margin: 0;border: 0;
+        }
+        body{
+            background-color: rgb(170, 137, 203);
+            cursor: default;
+            font-family: Helvetica, sans-serif;
+        }
+        .entry{
+            background-color: white;
+            width: 400px;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            border-radius: 5px;
+        }
+        .btn{
+            width: 30px;
+            height: 30px;
+            background-color: rgba(186, 112, 255, 0.5);
+            border-radius: 100%;
+            cursor: help;
+        }
+        .btn:hover{
+            background-color: rgba(169, 88, 244, 0.663);
+        }
+        .media::after{
+            content: "📸";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+        }
+
+        .infobox{
+            visibility: hidden;
+            position: absolute;
+            width: fit-content;
+            height: fit-content;
+            padding: 5px;
+            background-color: #ede3ff;
+            margin-top: 42px;
+            filter: drop-shadow(2px 2px 2px rgba(123, 84, 173, 0.644));
+            opacity: 0;
+            transform: scaleY(0.7) scale(0.9);
+            transform-origin:left top;
+            cursor: default;
+            border-radius: 2px;
+        }
+        .infobox::before{
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 10px solid #ede3ff;
+            top: -8px;
+            left: 10px;
+        }
+        .btn:hover .infobox{
+            visibility: visible;
+            opacity: 1;
+            transform: scaleY(1) scale(1);
+            /*animation: infobox 0.5s;*/
+        }
+
+        @keyframes infobox {
+            0%{
+                transform: scaleY(0.6);
+            }
+            30%{
+                transform: scaleY(1.03);
+            }
+            50%{
+                transform: scaleY(0.97)
+            }
+            70%{
+                transform: scaleY(1.01)
+            }
+            100%{
+                transform: scaleY(1);
+            }
+        }
+
+        .infobox h1{
+            color: blueviolet;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 900;
+        }
+
+        .infobox p{
+            color: blueviolet;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="entry">
+        <div class="btn media">
+            <div class="infobox">
+                <h1>MEDIA</h1>
+                <p>3 images
+                    2 videos
+                </p>
+            </div>
+        </div>
+        <div class="btn">
+            <div class="infobox">
+                <h1>MEDIA</h1>
+                <p>
+                    video 00:42:13
+                </p>
+            </div>
+        </div>
+        <div class="btn">
+            <div class="infobox">oaifowio eonav ioseniew</div>
+        </div>
+        <div class="btn">
+            <div class="infobox">oaifowio eonav ioseniew</div>
+        </div>
+        <div class="btn">
+            <div class="infobox">oaifowio eonav ioseniew</div>
+        </div>
+        <div class="btn">
+            <div class="infobox">oaifowio eonav ioseniew</div>
+        </div>
+    </div>
+</body>
+</html>
