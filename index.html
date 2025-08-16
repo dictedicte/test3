@@ -24,41 +24,43 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            border-radius: 5px;
+            border-radius: 10px;
             position: relative;
             margin-bottom: 10px;
-            padding: 5px;
+            padding: 4px 8px;
             box-shadow: 2px 2px 6px rgba(126, 65, 183, 0.574);
         }
-        .entry main{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: fit-content;
-        }
-        .entry main:hover p{
-            height: fit-content;
-        }
-        .entry main:hover h1{
-            height: fit-content;
-        }
-        .entry main h1{
-            color: rgb(162, 104, 216);
-            font-size: 14px;
-            font-weight: 900;
-            height: 22.4px;
-            min-height: 22.4px;
-            margin: 2.5px 0 2.5px 0;
-            overflow: hidden;
-        }
-        .entry main p{
-            color: rgb(157, 95, 215);
-            font-size: 14px;
-            font-weight: 500;
-            height: 18px;
-            min-height: 18px;
-            overflow: hidden;
-        }
+            
+            .entry main{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: fit-content;
+            }
+            .entry main:hover p{
+                height: fit-content;
+            }
+            .entry main:hover h1{
+                height: fit-content;
+            }
+            .entry main h1{
+                color: rgb(162, 104, 216);
+                font-size: 16px;
+                font-weight: 900;
+                height: 22.4px;
+                min-height: 22.4px;
+                margin: 2.5px 0 2.5px 0;
+                overflow: hidden;
+            }
+            .entry main p{
+                color: rgb(157, 95, 215);
+                font-size: 14px;
+                font-weight: 500;
+                height: 18px;
+                min-height: 18px;
+                overflow: hidden;
+            }
+
         .entry .buttons{
             width: fit-content;
             display: flex;
@@ -73,10 +75,13 @@
             border-radius: 100%;
             cursor: help;
             margin-right: 5px;
+            position: relative;
         }
         .btn:hover{
             background-color: rgb(201, 143, 255);
         }
+        
+
         .restriction::after{
             content: "🔒";
             position: absolute;
@@ -88,8 +93,13 @@
             border-radius: 100%;
             opacity: 0.85;
             transform: translateX(-3px) translateY(-3px);
-                        opacity: 1;
-
+            opacity: 1;
+        }
+        .info{
+            background-image: url(info_i_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 65%;
         }
         .media::after{
             content: "📸";
@@ -102,8 +112,7 @@
             border-radius: 100%;
             opacity: 0.85;
             transform: translateX(-3px) translateY(-3px);
-                        opacity: 1;
-
+            opacity: 1;
         }
         .media::before{
             content: "🎞️";
@@ -116,45 +125,38 @@
             border-radius: 100%;
             opacity: 0.85;
             transform: translateX(3px) translateY(3px);
-                        opacity: 1;
+            opacity: 1;
+        }
 
-        }
-        .media:hover:after{
-            opacity: 1;
-        }
-        .media:hover::before{
-            opacity: 1;
-        }
 
         .infobox{
             visibility: hidden;
             position: absolute;
             width: fit-content;
             height: fit-content;
-            margin-top: 50px;
+            margin-top: 48px;
             padding: 5px;
-            background-color: #e4d6ffba;
-            backdrop-filter:blur(3px) brightness(2);
-            filter: drop-shadow(2px 2px 2px rgba(123, 84, 173, 0.644));
+            background-color: #decdff;
+            backdrop-filter:blur(7px) brightness(2);
+            filter: drop-shadow(2px 2px 4px rgba(123, 84, 173, 0.644));
             opacity: 0;
             transform: scaleY(0.7) scale(0.9);
             transform-origin:right top;
             cursor: default;
-            border-radius: 2px;
+            border-radius: 5px;
             z-index: 100;
+            right: 0;
         }
         .infobox::before{
             content: "";
             position: absolute;
             width: 0;
             height: 0;
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
-            border-bottom: 10px solid #e4d6ffba;
-            top: -8.9px;
-            left: 10px;
-            backdrop-filter:blur(3px) brightness(2);
-
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 11px solid #decdff;
+            top: -10px;
+            right: 10px;
         }
         .btn:hover .infobox{
             visibility: visible;
@@ -162,7 +164,6 @@
             transform: scaleY(1) scale(1);
             /*animation: infobox 0.5s;*/
         }
-
         @keyframes infobox {
             0%{
                 transform: scaleY(0.6);
@@ -185,15 +186,22 @@
             color: blueviolet;
             width: 100%;
             text-align: center;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 900;
+            padding: 0 24px 0 24px;
+            box-sizing: border-box;
         }
-
         .infobox p{
             color: blueviolet;
             font-size: 14px;
+            font-weight: 540;
+            width: 100%;
+            text-align: center;
+        }
+        .infobox i{
             font-weight: 500;
         }
+
     </style>
 </head>
 <body>
@@ -203,26 +211,19 @@
             <p>Title/text</p>
         </main>
         <div class="buttons">
+            <div class="btn info">
+                <div class="infobox">
+                    <h1>NOTE</h1>
+                    <p>this is a note about this entry</p>
+                </div>
+            </div>
             <div class="btn media">
                 <div class="infobox">
                     <h1>MEDIA</h1>
-                    <p>3 images
-                        2 videos
-                    </p>
+                    <p>📸 3<br>🎞️ 2</p>
                 </div>
             </div>
 
-        <div class="btn">
-            <div class="infobox">
-                <h1>MEDIA</h1>
-                <p>
-                    video 00:42:13
-                </p>
-            </div>
-        </div>
-        <div class="btn">
-            <div class="infobox">oaifowio eonav ioseniew</div>
-        </div>
         </div>
     </div>
     <div class="entry">
@@ -231,14 +232,13 @@
             <p>Long title/text long title/text long title/text long title/text long title/text long title/text long title/text long title/text long title/text long title/text long title/text long title/text long title/text long title/text</p>
         </main>
         <div class="buttons">
-            <div class="btn media">
-                <div class="infobox">
-                    <h1>MEDIA</h1>
-                    <p>3 images
-                        2 videos
-                    </p>
-                </div>
+            
+        <div class="btn media">
+            <div class="infobox">
+                <h1>MEDIA</h1>
+                <p>🎞️ <i>00:42:13</i></p>
             </div>
+        </div>
         <div class="btn">
             <div class="infobox">
                 <h1>MEDIA</h1>
