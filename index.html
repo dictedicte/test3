@@ -20,7 +20,7 @@
             width: 400px;
             max-width: 90%;
             height: fit-content;
-            min-height: 50px;
+            min-height: 40px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -28,11 +28,13 @@
             position: relative;
             margin-bottom: 10px;
             padding: 5px;
+            box-shadow: 2px 2px 6px rgba(126, 65, 183, 0.574);
         }
         .entry main{
             display: flex;
             flex-direction: column;
             justify-content: center;
+            height: fit-content;
         }
         .entry main:hover p{
             height: fit-content;
@@ -41,8 +43,8 @@
             height: fit-content;
         }
         .entry main h1{
-            color: blueviolet;
-            font-size: 16px;
+            color: rgb(162, 104, 216);
+            font-size: 14px;
             font-weight: 900;
             height: 22.4px;
             min-height: 22.4px;
@@ -50,20 +52,19 @@
             overflow: hidden;
         }
         .entry main p{
-            color: blueviolet;
-            font-size: 16px;
+            color: rgb(157, 95, 215);
+            font-size: 14px;
             font-weight: 500;
-            height: 20px;
-            min-height: 20px;
+            height: 18px;
+            min-height: 18px;
             overflow: hidden;
-            margin-top: 5px;
         }
         .entry .buttons{
             width: fit-content;
             display: flex;
             flex-direction: row;
             align-items: center;
-            height: 50px;
+            height: 40px;
         }
         .btn{
             width: 35px;
@@ -76,8 +77,8 @@
         .btn:hover{
             background-color: rgb(201, 143, 255);
         }
-        .media::after{
-            content: "📸🎞️";
+        .restriction::after{
+            content: "🔒";
             position: absolute;
             width: 35px;
             height: 35px;
@@ -86,11 +87,43 @@
             align-items: center;
             border-radius: 100%;
             opacity: 0.85;
-            background-color: rgb(216, 175, 255);
+            transform: translateX(-3px) translateY(-3px);
+                        opacity: 1;
+
+        }
+        .media::after{
+            content: "📸";
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            opacity: 0.85;
+            transform: translateX(-3px) translateY(-3px);
+                        opacity: 1;
+
+        }
+        .media::before{
+            content: "🎞️";
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            opacity: 0.85;
+            transform: translateX(3px) translateY(3px);
+                        opacity: 1;
+
         }
         .media:hover:after{
             opacity: 1;
-            background-color: rgb(201, 143, 255);
+        }
+        .media:hover::before{
+            opacity: 1;
         }
 
         .infobox{
@@ -233,11 +266,11 @@
                     </p>
                 </div>
             </div>
-        <div class="btn">
+        <div class="btn restriction">
             <div class="infobox">
-                <h1>MEDIA</h1>
+                <h1>RESTRICTION</h1>
                 <p>
-                    video 00:42:13
+                    accesible to weverse membership holders
                 </p>
             </div>
         </div>
