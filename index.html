@@ -22,27 +22,55 @@
             height: 50px;
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
             border-radius: 5px;
+            position: relative;
+        }
+        .entry main h1{
+            color: blueviolet;
+            font-size: 16px;
+            font-weight: 900;
+            height: 25px;
+        }
+        .entry main p{
+            color: blueviolet;
+            font-size: 16px;
+            font-weight: 500;
+            height: 25px;
+        }
+        .entry .buttons{
+            width: fit-content;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 50px;
         }
         .btn{
-            width: 30px;
-            height: 30px;
-            background-color: rgba(186, 112, 255, 0.5);
+            width: 35px;
+            height: 35px;
+            background-color: rgb(216, 175, 255);
             border-radius: 100%;
             cursor: help;
+            margin-right: 5px;
         }
         .btn:hover{
-            background-color: rgba(169, 88, 244, 0.663);
+            background-color: rgb(201, 143, 255);
         }
         .media::after{
-            content: "📸";
+            content: "📸🎞️";
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 100%;
+            opacity: 0.85;
+            background-color: rgb(216, 175, 255);
+        }
+        .media:hover:after{
+            opacity: 1;
+            background-color: rgb(201, 143, 255);
         }
 
         .infobox{
@@ -50,13 +78,14 @@
             position: absolute;
             width: fit-content;
             height: fit-content;
+            margin-top: 50px;
             padding: 5px;
-            background-color: #ede3ff;
-            margin-top: 42px;
+            background-color: #e4d6ffba;
+            backdrop-filter:blur(3px) brightness(2);
             filter: drop-shadow(2px 2px 2px rgba(123, 84, 173, 0.644));
             opacity: 0;
             transform: scaleY(0.7) scale(0.9);
-            transform-origin:left top;
+            transform-origin:right top;
             cursor: default;
             border-radius: 2px;
         }
@@ -67,9 +96,11 @@
             height: 0;
             border-left: 7px solid transparent;
             border-right: 7px solid transparent;
-            border-bottom: 10px solid #ede3ff;
-            top: -8px;
+            border-bottom: 10px solid #e4d6ffba;
+            top: -8.9px;
             left: 10px;
+            backdrop-filter:blur(3px) brightness(2);
+
         }
         .btn:hover .infobox{
             visibility: visible;
@@ -113,14 +144,20 @@
 </head>
 <body>
     <div class="entry">
-        <div class="btn media">
-            <div class="infobox">
-                <h1>MEDIA</h1>
-                <p>3 images
-                    2 videos
-                </p>
+        <main>
+            <h1>DESCRIPTION</h1>
+            <p>Title/text</p>
+        </main>
+        <div class="buttons">
+            <div class="btn media">
+                <div class="infobox">
+                    <h1>MEDIA</h1>
+                    <p>3 images
+                        2 videos
+                    </p>
+                </div>
             </div>
-        </div>
+        
         <div class="btn">
             <div class="infobox">
                 <h1>MEDIA</h1>
@@ -132,14 +169,6 @@
         <div class="btn">
             <div class="infobox">oaifowio eonav ioseniew</div>
         </div>
-        <div class="btn">
-            <div class="infobox">oaifowio eonav ioseniew</div>
-        </div>
-        <div class="btn">
-            <div class="infobox">oaifowio eonav ioseniew</div>
-        </div>
-        <div class="btn">
-            <div class="infobox">oaifowio eonav ioseniew</div>
         </div>
     </div>
 </body>
